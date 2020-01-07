@@ -18,8 +18,6 @@ output:
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
 ```
-
----
 class: inverse, center, middle
 
 # Learner Persona
@@ -31,7 +29,7 @@ class: inverse, center, middle
 ### General background
 - Sakhile grew up in a **rural village** in South Africa, called Dumabezwe.
 - He worked extremely hard during school to **rise up** against various challenges.
-- Awarded a **bursary** from an aluminium production company to study Mechanical Engineering in Cape Town.
+- Awarded a **bursary** from an Aluminium production company to study Mechanical Engineering in Cape Town.
 - He is now working for the company, as a **Process Engineer**.
 - Sakhile loves the city life but is most passionate about going home to visit and support his **extended family** and help **mentor** other young, aspiring kids.
 ]
@@ -70,8 +68,8 @@ class: inverse, center, middle
 
 .pull-left[
 ### Special considerations
-- Sakhile is proud of himself and where he has come from, but can still feel like an "imposter".
-- He can therefore feel threatened or self conscious when speaking in front of a group.
+- Sakhile is proud of himself and where he has come from, but can still feel like an **"imposter"**.
+- He can therefore feel **threatened or self conscious** when speaking in front of a group.
 ]
 
 .pull-right[
@@ -93,3 +91,6 @@ class: inverse, center, middle
 class: inverse, center, middle
 
 # Concept Map
+
+---
+
