@@ -1,0 +1,126 @@
+---
+title: "Databases in R"
+subtitle: "Introduction"
+author: "Megan Beckett"
+institute: "Exegetic Analytics"
+date: "January 2020"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: [default, ninjutsu, exegetic, exegetic-fonts]
+    nature:
+      ratio: "16:9"
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+## What are we learning?
+
+.pull-left[
+**Objectives for this lesson are:**
+
+1. To access a database from within R.
+2. To execute SQL queries in R using `dplyr`.
+]
+
+.pull-right[
+<img src="img/database-r-logo.png">
+]
+
+---
+
+## What are we learning?
+.pull-left[
+**Objectives for this lesson are:**
+
+1. To access a database from within R.
+2. To execute SQL queries in R using `dplyr`.
+
+</br></br></br>
+
+## Why?
+
+**What do you think?**
+]
+
+.pull-right[
+<img src="img/database-r-logo.png">
+]
+
+---
+## What are we learning?
+.pull-left[
+**Objectives for this lesson are:**
+
+1. To access a database from within R.
+2. To execute SQL queries in R using `dplyr`.
+
+</br></br></br>
+
+## Why?
+
+- Your data is already in a database.
+- You have too much for your computer's memory to handle at once.
+- Retrieve only what you need.
+- All of your code is in R! :)
+]
+
+.pull-right[
+<img src="img/database-r-logo.png">
+]
+---
+## Connect to a database
+
+### Many different databases
+
+<center><img src="img/r-con-1.png" style = "width: 65%"></center>
+---
+## Connect to a database
+
+### Common databases have R packages
+
+<center><img src="img/r-con-2.png" style = "width: 65%"></center>
+---
+## Connect to a database
+
+### Using *dplyr*
+
+<center><img src="img/rstudio-interact1.png" style = "width: 60%"></center>
+
+---
+## Connect to a database
+### Using *dplyr*
+
+<center><img src="img/rstudio-interact2.png" style = "width: 60%"></center>
+
+---
+## Connect to a database
+
+### Using *dplyr*
+<center><img src="img/rstudio-interact3.png" style = "width: 60%"></center>
+
+```
+install.packages("dbplyr")
+```
+
+---
+## Connect to a database
+
+### `DBI` package
+<center><img src="img/open-source.png" style = "width: 80%"></center>
+
+---
+## Attribution
+
+### Images:
+- database by Lnhi from the Noun Project - https://thenounproject.com/search/?q=database&i=2220445
+- Databases using R from RStudio - https://db.rstudio.com/overview
+
+### Content:
+
+Inspiration from the following websites, articles and courses:
+
+- https://db.rstudio.com/
+- https://datacarpentry.org/R-ecology-lesson/index.html
+- https://www.r-bloggers.com/a-comprehensive-introduction-to-working-with-databases-using-r/
+- 

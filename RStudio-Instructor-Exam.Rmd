@@ -106,7 +106,7 @@ class: center, middle
 ---
 class: inverse, center, middle
 
-The lesson for the **RStudio Instructor Teaching** Exam will focus on an introduction to the part highlighted in green.
+The lesson for the **RStudio Instructor Teaching Exam** will focus on an introduction to the part highlighted in green.
 
 ---
 class: center, middle
