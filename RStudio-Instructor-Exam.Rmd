@@ -35,7 +35,7 @@ class: inverse, center, middle
 ]
 
 .pull-right[
-<img src="sakhile.jpg" style="box-shadow: 10px 10px 5px grey; width: 70%">
+<img src="img/sakhile.jpg" style="box-shadow: 10px 10px 5px grey; width: 70%">
 ]
 ---
 ## Sakhile Kubeka
@@ -48,7 +48,7 @@ class: inverse, center, middle
 ]
 
 .pull-right[
-<img src="sakhile.jpg" style="box-shadow: 10px 10px 5px grey; width: 70%">
+<img src="img/sakhile.jpg" style="box-shadow: 10px 10px 5px grey; width: 70%">
 ]
 ---
 ## Sakhile Kubeka
@@ -61,7 +61,7 @@ class: inverse, center, middle
 ]
 
 .pull-right[
-<img src="sakhile.jpg" style="box-shadow: 10px 10px 5px grey; width: 70%">
+<img src="img/sakhile.jpg" style="box-shadow: 10px 10px 5px grey; width: 70%">
 ]
 ---
 ## Sakhile Kubeka
@@ -73,7 +73,7 @@ class: inverse, center, middle
 ]
 
 .pull-right[
-<img src="sakhile.jpg" style="box-shadow: 10px 10px 5px grey; width: 70%">
+<img src="img/sakhile.jpg" style="box-shadow: 10px 10px 5px grey; width: 70%">
 ]
 ---
 ## Workshop pitch
@@ -85,7 +85,7 @@ class: inverse, center, middle
 ]
 
 .pull-right[
-<img src="sakhile.jpg" style="box-shadow: 10px 10px 5px grey; width: 70%">
+<img src="img/sakhile.jpg" style="box-shadow: 10px 10px 5px grey; width: 70%">
 ]
 ---
 class: inverse, center, middle
@@ -102,7 +102,7 @@ I am busy developing the material for this workshop that I will be giving at the
 ---
 class: center, middle
 
-<img src="databases-in-R.png">
+<img src="img/databases-in-R.png">
 ---
 class: inverse, center, middle
 
@@ -110,5 +110,5 @@ The lesson for the **RStudio Instructor Teaching** Exam will focus on an introdu
 
 ---
 class: center, middle
-<img src="databases-in-R-select.png">
+<img src="img/databases-in-R-select.png">
 
