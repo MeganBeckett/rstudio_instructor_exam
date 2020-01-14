@@ -69,8 +69,11 @@ output:
 <img src="img/database-r-logo.png">
 ]
 ---
-## Connect to a database
+class: section, center, middle
+# 1. Connect to a database
 
+---
+## Connect to a database
 ### Many different databases
 
 <center><img src="img/r-con-1.png" style = "width: 65%"></center>
@@ -85,29 +88,135 @@ output:
 
 ### Using *dplyr*
 
-<center><img src="img/rstudio-interact1.png" style = "width: 60%"></center>
+<center><img src="img/rstudio-interact1.png" style = "width: 70%"></center>
 
 ---
 ## Connect to a database
 ### Using *dplyr*
 
-<center><img src="img/rstudio-interact2.png" style = "width: 60%"></center>
+<center><img src="img/rstudio-interact2.png" style = "width: 70%"></center>
 
 ---
 ## Connect to a database
 
 ### Using *dplyr*
-<center><img src="img/rstudio-interact3.png" style = "width: 60%"></center>
+<center><img src="img/rstudio-interact3.png" style = "width: 70%"></center>
 
 ```
 install.packages("dbplyr")
 ```
-
 ---
 ## Connect to a database
 
 ### `DBI` package
-<center><img src="img/open-source.png" style = "width: 80%"></center>
+</br>
+<center><img src="img/open-source.png" style = "width: 70%"></center>
+
+---
+## Connect to a database
+
+### Create the connection
+
+```{r eval = FALSE}
+library(dplyr)
+library(dbplyr)
+
+con <- DBI::dbConnect(RSQLite::SQLite(), path = ":dbname:")
+
+```
+
+--
+A more realistic connection:
+
+```{r eval = FALSE}
+con <- DBI::dbConnect(RMySQL::MySQL(), 
+                      dbname = "my_database"
+                      host = "database.lsdkjfslfj.uk-west-1.rds.amazonaws.com",
+                      user = "student",
+                      password = "my_password")
+```
+
+---
+## Check your understanding
+
+What is the most likely output from running the following piece of code and why?
+
+```{r eval = FALSE}
+library(dplyr)
+
+con <- DBI:dbConnect(RSQLite::SQLite(), "data_raw/mammals.sqlite")
+
+data <- tbl(con, "species") 
+
+nrow(data)
+```
+
+1. `NA` - as the `species` table is empty and therefore the `data` dataframe is empty.
+2. `NA` - as `dplyr is lazy and only pulls the data into R when explicitly asked.
+3. `54` - as we have created a `data` dataframe in R from the `species` table in the database, which has 54 rows.
+
+---
+class: section, center, middle
+# 2. Query a database
+
+---
+## Query a database
+
+### Using the `dplyr` syntax
+
+Behind the scenes, `dbplyr` and `dplyr`:
+
+- translates R into SQL
+- submits to database
+- translates response from database into a R dataframe
+
+Focus on `SELECT`.
+
+---
+## Check your understanding
+
+Arrange the following steps in the correct order to find out the number of animals surveyed per year in the mammals database.
+
+.pull-left[
+```
+1. Use `tbl` to create a reference to the `surveys` table.
+2. `group_by` the year. 
+3. Create a connection to the database.
+4. `collect` the data.
+5. `summarise` by counting the number of observations in each group.
+```
+]
+
+---
+## Check your understanding
+
+Answer:
+
+.pull-left[
+```
+3. Create a connection to the database.
+1. Use `tbl` to create a reference to the `surveys` table.
+2. `group_by` the year. 
+5. `summarise` and count the number of observations in each group.
+4. `collect` the data.
+```
+]
+
+.pull-right[
+```
+mammals <- DBI::dbConnect(RSQLite::SQLite(), "data_raw/mammals.sqlite")
+
+year_summary <- tbl(mammals, "surveys")
+  group_by(year) %>%
+  summarise(N = n()) %>%
+  collect()
+                
+```
+]
+---
+
+class: section, center, middle
+# 3. Let's practice!
 
 ---
 ## Attribution
@@ -123,4 +232,11 @@ Inspiration from the following websites, articles and courses:
 - https://db.rstudio.com/
 - https://datacarpentry.org/R-ecology-lesson/index.html
 - https://www.r-bloggers.com/a-comprehensive-introduction-to-working-with-databases-using-r/
-- 
+
+### Data:
+
+```
+download.file(url = "https://ndownloader.figshare.com/files/2292171",
+              destfile = "mammals.sqlite", mode = "wb")
+```
+---
