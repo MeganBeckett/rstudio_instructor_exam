@@ -95,7 +95,7 @@ class: inverse, center, middle
 ---
 class: inverse, center, middle
 
-This lesson has been developed in the context of a slightly longer workshop focusing on **connecting to databases** from within R. 
+This lesson has been developed in the context of a slightly longer workshop focusing on **databases from within R**. 
 
 I am busy developing the material for this workshop that I will be giving at the end of January.
 

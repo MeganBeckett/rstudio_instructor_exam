@@ -14,6 +14,7 @@ download.file(url = "https://ndownloader.figshare.com/files/2292171",
 
 # LIBRARIES -----------------------------------------------------------------------------------
 library(dplyr)
+library(dbplyr)
 
 
 # CONNECTION ----------------------------------------------------------------------------------
@@ -36,20 +37,15 @@ surveys_data <- surveys %>%
 nrow(surveys_data)
 
 # QUERY ---------------------------------------------------------------------------------------
+# How many different species per taxa are in the dataset?
+species <- tbl(mammals, "species")
 
-show_query(head(surveys))
+head(species)
 
-plot <- tbl(mammals, "plot")
-
-species <- tbl(mammals, "species") %>%
-  collect()
-
-species_summary <- species %>%
+taxa_summary <- species %>%
   group_by(taxa) %>%
   summarise(N = n()) %>%
   collect()
 
-head(species)
-nrow(species)
 
-show_query(head(surveys))
+

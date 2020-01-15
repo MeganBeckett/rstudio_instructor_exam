@@ -105,12 +105,12 @@ class: section, center, middle
 ```
 install.packages("dbplyr")
 ```
----
-## Connect to a database
+<!-- --- -->
+<!-- ## Connect to a database -->
 
-### `DBI` package
-</br>
-<center><img src="img/open-source.png" style = "width: 70%"></center>
+<!-- ### `DBI` package -->
+<!-- </br> -->
+<!-- <center><img src="img/open-source.png" style = "width: 70%"></center> -->
 
 ---
 ## Connect to a database
@@ -121,12 +121,14 @@ install.packages("dbplyr")
 library(dplyr)
 library(dbplyr)
 
-con <- DBI::dbConnect(RSQLite::SQLite(), path = ":dbname:")
+con <- DBI::dbConnect(RSQLite::SQLite(), path = ":memory:")
 
 ```
 
 --
-A more realistic connection:
+</br>
+
+A more realistic connection to a database on a server:
 
 ```{r eval = FALSE}
 con <- DBI::dbConnect(RMySQL::MySQL(), 
@@ -151,9 +153,39 @@ data <- tbl(con, "species")
 nrow(data)
 ```
 
-1. `NA` - as the `species` table is empty and therefore the `data` dataframe is empty.
-2. `NA` - as `dplyr is lazy and only pulls the data into R when explicitly asked.
-3. `54` - as we have created a `data` dataframe in R from the `species` table in the database, which has 54 rows.
+</br>
+
+1. `NA` - as the `species` table is empty and therefore the `data` dataframe in R is empty.
+
+2. `NA` - as `dplyr` is "lazy" and only pulls the data into R when explicitly asked.
+
+3. `TRUE` - as we have created a successful connection to a database table.
+
+4. `54` - as we have created a `data` dataframe in R from the `species` table in the database, which has 54 rows.
+---
+## Check your understanding
+
+What is the most likely output from running the following piece of code and why?
+
+```{r eval = FALSE}
+library(dplyr)
+
+con <- DBI:dbConnect(RSQLite::SQLite(), "data_raw/mammals.sqlite")
+
+data <- tbl(con, "species") 
+
+nrow(data)
+```
+
+</br>
+
+1. `NA` - as the `species` table is empty and therefore the `data` dataframe in R is empty.
+
+2. **`NA` - as `dplyr` is "lazy" and only pulls the data into R when explicitly asked.**
+
+3. `TRUE` - as we have created a successful connection to a database table.
+
+4. `54` - as we have created a `data` dataframe in R from the `species` table in the database, which has 54 rows.
 
 ---
 class: section, center, middle
@@ -162,7 +194,7 @@ class: section, center, middle
 ---
 ## Query a database
 
-### Using the `dplyr` syntax
+### Using the dplyr syntax
 
 Behind the scenes, `dbplyr` and `dplyr`:
 
@@ -172,19 +204,26 @@ Behind the scenes, `dbplyr` and `dplyr`:
 
 Focus on `SELECT`.
 
+<center><img src="img/rstudio-interact3.png" style = "width: 55%"></center>
 ---
 ## Check your understanding
 
 Arrange the following steps in the correct order to find out the number of animals surveyed per year in the mammals database.
 
+</br>
+
 .pull-left[
-```
-1. Use `tbl` to create a reference to the `surveys` table.
-2. `group_by` the year. 
-3. Create a connection to the database.
-4. `collect` the data.
-5. `summarise` by counting the number of observations in each group.
-```
+
+1: Use `tbl` to create a reference to the `surveys` table.
+
+2: `group_by` the year. 
+
+3: Create a connection to the database using `DBI`.
+
+4: `collect` the data.
+
+5: `summarise` by counting the number of observations in each group.
+
 ]
 
 ---
@@ -192,26 +231,33 @@ Arrange the following steps in the correct order to find out the number of anima
 
 Answer:
 
+</br>
+
 .pull-left[
-```
-3. Create a connection to the database.
-1. Use `tbl` to create a reference to the `surveys` table.
-2. `group_by` the year. 
-5. `summarise` and count the number of observations in each group.
-4. `collect` the data.
-```
+**3:** Create a connection to the database using `DBI`.
+
+**1:** Use `tbl` to create a reference to the `surveys` table.
+
+**2:** `group_by` the year. 
+
+**5:** `summarise` and count the number of observations in each group.
+
+**4:** `collect` the data.
+
 ]
 
 .pull-right[
-```
-mammals <- DBI::dbConnect(RSQLite::SQLite(), "data_raw/mammals.sqlite")
 
-year_summary <- tbl(mammals, "surveys")
+```{r eval = FALSE}
+mammals <- dbConnect(SQLite(), 
+                     "data_raw/mammals.sqlite")
+
+year_sum <- tbl(mammals, "surveys")
   group_by(year) %>%
   summarise(N = n()) %>%
   collect()
-                
 ```
+
 ]
 ---
 
