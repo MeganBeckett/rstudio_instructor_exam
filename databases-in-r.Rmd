@@ -14,6 +14,13 @@ output:
       highlightLines: true
       countIncrementalSlides: false
 ---
+```{r setup, include=FALSE}
+options(tibble.print_min = 5)
+knitr::opts_chunk$set(echo = TRUE, warning=FALSE,  message=FALSE, fig.retina = 3, comment = NULL)
+
+library(dplyr)
+library(dbplyr)
+```
 ## What are we learning?
 
 .pull-left[
@@ -139,14 +146,17 @@ con <- DBI::dbConnect(RMySQL::MySQL(),
 ```
 
 ---
+class: highlight-green
 ## Check your understanding
 
 What is the most likely output from running the following piece of code and why?
 
+</br>
+
 ```{r eval = FALSE}
 library(dplyr)
 
-con <- DBI:dbConnect(RSQLite::SQLite(), "data_raw/mammals.sqlite")
+con <- DBI:dbConnect(RSQLite::SQLite(), "data/mammals.sqlite")
 
 data <- tbl(con, "species") 
 
@@ -162,15 +172,19 @@ nrow(data)
 3. `TRUE` - as we have created a successful connection to a database table.
 
 4. `54` - as we have created a `data` dataframe in R from the `species` table in the database, which has 54 rows.
+
 ---
+class: highlight-green
 ## Check your understanding
+
+</br>
 
 What is the most likely output from running the following piece of code and why?
 
 ```{r eval = FALSE}
 library(dplyr)
 
-con <- DBI:dbConnect(RSQLite::SQLite(), "data_raw/mammals.sqlite")
+con <- DBI:dbConnect(RSQLite::SQLite(), "data/mammals.sqlite")
 
 data <- tbl(con, "species") 
 
@@ -206,9 +220,10 @@ Focus on `SELECT`.
 
 <center><img src="img/rstudio-interact3.png" style = "width: 55%"></center>
 ---
+class: highlight-green
 ## Check your understanding
 
-Arrange the following steps in the correct order to find out the number of animals surveyed per year in the mammals database.
+Arrange the steps in order to find out the number of animals surveyed per year in the mammals database.
 
 </br>
 
@@ -227,6 +242,7 @@ Arrange the following steps in the correct order to find out the number of anima
 ]
 
 ---
+class: highlight-green
 ## Check your understanding
 
 Answer:
@@ -250,7 +266,7 @@ Answer:
 
 ```{r eval = FALSE}
 mammals <- dbConnect(SQLite(), 
-                     "data_raw/mammals.sqlite")
+                     "data/mammals.sqlite")
 
 year_sum <- tbl(mammals, "surveys")
   group_by(year) %>%
@@ -261,9 +277,9 @@ year_sum <- tbl(mammals, "surveys")
 ]
 ---
 
-class: section, center, middle
-# 3. Let's practice!
-
+class: section, section-orange, center, middle
+# Let's practice!
+## Exercise 1
 ---
 ## Attribution
 
