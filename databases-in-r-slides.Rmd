@@ -177,9 +177,9 @@ nrow(data)
 class: highlight-green
 ## Check your understanding
 
-</br>
-
 What is the most likely output from running the following piece of code and why?
+
+</br>
 
 ```{r eval = FALSE}
 library(dplyr)
@@ -280,25 +280,5 @@ year_sum <- tbl(mammals, "surveys")
 class: section, section-orange, center, middle
 # Let's practice!
 ## Exercise 1
----
-## Attribution
 
-### Images:
-- database by Lnhi from the Noun Project - https://thenounproject.com/search/?q=database&i=2220445
-- Databases using R from RStudio - https://db.rstudio.com/overview
-
-### Content:
-
-Inspiration from the following websites, articles and courses:
-
-- https://db.rstudio.com/
-- https://datacarpentry.org/R-ecology-lesson/index.html
-- https://www.r-bloggers.com/a-comprehensive-introduction-to-working-with-databases-using-r/
-
-### Data:
-
-```
-download.file(url = "https://ndownloader.figshare.com/files/2292171",
-              destfile = "mammals.sqlite", mode = "wb")
-```
 ---
