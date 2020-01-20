@@ -8,7 +8,7 @@ This repository hosts the content for the lesson I have prepared for the exam.
   - A [PDF](rstudio-exam-supp-material.pdf) containing the learner person and concept map.
   
 **2. Slides**
-- A [PDF](databases-in-r-slides.pdf) of the slides I will be using for the lesson presentation.
+- A [PDF](databases-in-r-slides.pdf) of the slides I will be using for the lesson presentation (including formative assessments).
 
 **3. Exercises**
 - Scaffolded [exercises](/exercises) for participants to complete in class to put into practice what we've covered in the lesson.
