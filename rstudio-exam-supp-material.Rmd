@@ -81,7 +81,7 @@ class: inverse, center, middle
 .pull-left[
 ### What are we going to do?
 
-*"This one day course will help take your basic R skills to the next level as we learn how to get data from databases into R for analysis and then automate the reporting of your insights in RMarkdown."*
+*"This one day course will help take your R skills to the next level as we learn how to efficiently get data from databases into R for analysis and then automate the reporting of your insights in RMarkdown."*
 ]
 
 .pull-right[
@@ -95,9 +95,9 @@ class: inverse, center, middle
 ---
 class: inverse, center, middle
 
-This lesson has been developed in the context of a slightly longer workshop focusing on **databases from within R**. 
+### This lesson has been developed in the context of a slightly longer workshop focusing on **databases from within R**. 
 
-I am busy developing the material for this workshop that I will be giving at the end of January.
+### I am busy developing the material for this workshop that I will be giving at the end of January.
 
 ---
 class: center, middle
@@ -106,9 +106,30 @@ class: center, middle
 ---
 class: inverse, center, middle
 
-The lesson for the **RStudio Instructor Teaching Exam** will focus on an introduction to the part highlighted in green.
+### The lesson for the **RStudio Instructor Teaching Exam** will focus on an introduction to the part highlighted in green.
 
 ---
 class: center, middle
+
 <img src="img/databases-in-R-select.png">
+---
+class: inverse, center, middle
+
+### The lesson was designed to be broken up into two **chunks**, highlighted on the next slide, each with a **formative assessment** to check understanding, followed by a set of exercises at the end to put into **practice** what has been covered, with **scaffolded examples**.
+
+### The exercises for practice have been provided, but will not form part of the lesson presentation for the exam.
+
+---
+class: center, middle
+
+<img src="img/databases-in-R-select-dash.png">
+
+---
+class: inverse, center, middle
+
+### And following is the first, rough version I initially drew out for the concept map.
+
+---
+class: center, middle
+<img src="img/concept-map-rough.jpg">
 
