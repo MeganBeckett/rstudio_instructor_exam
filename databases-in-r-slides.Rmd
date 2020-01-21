@@ -165,13 +165,13 @@ nrow(data)
 
 </br>
 
-1. `NA` - as the `species` table is empty and therefore the `data` dataframe in R is empty.
+A. `NA` - as the `species` table is empty and therefore the `data` dataframe in R is empty.
 
-2. `NA` - as `dplyr` is "lazy" and only pulls the data into R when explicitly asked.
+B. `NA` - as `dplyr` is "lazy" and only pulls the data into R when explicitly asked.
 
-3. `TRUE` - as we have created a successful connection to a database table.
+C. `TRUE` - as we have created a successful connection to a database table.
 
-4. `54` - as we have created a `data` dataframe in R from the `species` table in the database, which has 54 rows.
+D. `54` - as we have created a `data` dataframe in R from the `species` table in the database, which has 54 rows.
 
 ---
 class: highlight-green
@@ -193,13 +193,13 @@ nrow(data)
 
 </br>
 
-1. `NA` - as the `species` table is empty and therefore the `data` dataframe in R is empty.
+A. `NA` - as the `species` table is empty and therefore the `data` dataframe in R is empty.
 
-2. **`NA` - as `dplyr` is "lazy" and only pulls the data into R when explicitly asked.**
+B. **`NA` - as `dplyr` is "lazy" and only pulls the data into R when explicitly asked.**
 
-3. `TRUE` - as we have created a successful connection to a database table.
+C. `TRUE` - as we have created a successful connection to a database table.
 
-4. `54` - as we have created a `data` dataframe in R from the `species` table in the database, which has 54 rows.
+D. `54` - as we have created a `data` dataframe in R from the `species` table in the database, which has 54 rows.
 
 ---
 class: section, center, middle
@@ -245,7 +245,7 @@ Arrange the steps in order to find out the number of animals surveyed per year i
 class: highlight-green
 ## Check your understanding
 
-Answer:
+Arrange the steps in order to find out the number of animals surveyed per year in the mammals database.
 
 </br>
 
@@ -262,13 +262,14 @@ Answer:
 
 ]
 
+--
 .pull-right[
 
 ```{r eval = FALSE}
 mammals <- dbConnect(SQLite(), 
                      "data/mammals.sqlite")
 
-year_sum <- tbl(mammals, "surveys")
+year_sum <- tbl(mammals, "surveys") %>%
   group_by(year) %>%
   summarise(N = n()) %>%
   collect()
