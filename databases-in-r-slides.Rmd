@@ -128,7 +128,7 @@ install.packages("dbplyr")
 library(dplyr)
 library(dbplyr)
 
-con <- DBI::dbConnect(RSQLite::SQLite(), path = ":memory:")
+con <- DBI::dbConnect(RSQLite::SQLite(), path = "data/my_database.sqlite")
 
 ```
 
@@ -215,8 +215,6 @@ Behind the scenes, `dbplyr` and `dplyr`:
 - translates R into SQL
 - submits to database
 - translates response from database into a R dataframe
-
-Focus on `SELECT`.
 
 <center><img src="img/rstudio-interact3.png" style = "width: 55%"></center>
 ---
